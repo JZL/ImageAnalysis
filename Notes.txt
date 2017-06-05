@@ -1,0 +1,7 @@
+# Setting up MATLAB
+* Make sure have data and functions on path
+    * Change keyboard shortcuts --> windows
+
+
+Crop biutton --> CropButtonPushed
+317

@@ -7,7 +7,7 @@ function clippingPlane = makeplane3(C1,x1,y1,z1,r,flip)
 %Date: 6/2/17
 %Contact: colgan.william@gmail.com
 [x,y,z] = size(C1);
-clippingPlane = double(zeros(x,y,z));
+clippingPlane = double(ones(x,y,z))*0.7;
 for i = 1:x
     for j = 1:y
         for k = 1:z
