@@ -12,8 +12,12 @@ clippingPlane = double(zeros(x,y));
 for s = 1:1:3
     for i = 1:x
         for j = 1:y
-            if(z == zs(s) && abs(xs(s)*x-i)<2 && abs(ys(s)*y-j)<2)
-                clippingPlane(i,j) = 1;
+            if(abs(xs(s)*x-i)<2 && abs(ys(s)*y-j)<2)
+                if(z == zs(s))
+                    clippingPlane(i,j) = 1;
+                else
+                    clippingPlane(i,j) = 0.5;
+                end
             end
         end
     end
