@@ -1,6 +1,7 @@
-function  imageButtonClick ( objectHandle , eventData, app)
-objectHandle.XData
-pt=get(get(gcf,'Children'),'CurrentPoint')
+function  imageButtonClick ( objectHandle , eventData, app, im)
+hold(app.UIAxes, 'on');
+objectHandle.Parent.Parent.CurrentPoint
+'aa'
 %     pt=get(,'CurrentPoint')
 %     h=line('Xdata', pt(1,1),'Ydata',pt(1,2))
 %     set(f,'WindowButtonMotion', {@DrawBox,h,pt})
