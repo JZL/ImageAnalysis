@@ -1,4 +1,4 @@
-function clippingPlane = makeplane3(C1, xs, ys, zs ,flip, z)
+function clippingPlane = makeplane3(C1, xs, ys, zs ,flip)
 %This function can be used to make a clipping plane for a 3D image
 %
 %   clippingPlane = makeplane3(C1,x1,y1,z1,r,flip)
@@ -6,8 +6,8 @@ function clippingPlane = makeplane3(C1, xs, ys, zs ,flip, z)
 %Author: William Colgan
 %Date: 6/2/17
 %Contact: colgan.william@gmail.com
-[x,y] = size(C1);
-clippingPlane = double(ones(x,y))*.5;
+[x,y, z] = size(C1);
+clippingPlane = double(zeros(x,y));
 % see http://www.math.cornell.edu/~froh/231f08e1a.pdf
 allPoints = [xs*x; ys*y; zs];
 % sub1 = a(:, 1) - a(:, 2)
