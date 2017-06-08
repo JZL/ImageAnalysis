@@ -7,9 +7,9 @@ function cellMask = refinemask(cellMask,amount)
 %Date: 2/14/17
 %Contact: colgan.william@gmail.com
 
-SE = strel('disk',5);
+SE = strel('sphere',5);
 cellMask = imdilate(cellMask, SE);
-SE = strel('disk',round(5-amount));
+SE = strel('sphere',round(5-amount));
 cellMask = imerode(cellMask, SE);
 
 end

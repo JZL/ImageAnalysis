@@ -27,7 +27,7 @@ for i = 1:numplanes
     P = imgaussfilt(P,sigma); %apply gaussfilt
     end
     P = double(P>thresh*(1-i*b)); %threshold
-    SE = strel('diamond',10);
+    SE = strel('diamond',10); %change
     P = imdilate(P, SE); %dilate to close gaps
     [x,y] = size(P);
     P(1,:) = 0;
@@ -38,7 +38,7 @@ for i = 1:numplanes
     P = imerode(P,SE); %undo dilation
     cellMask(:,:,i) = P;
 end
-SE = strel('sphere',5);
+SE = strel('sphere',5); %larger = less efficient, more space filling
 cellMask = imerode(cellMask,SE);
 cellMask = bwareaopen(cellMask,10000);
 cellMask  = imdilate(cellMask, SE);
